@@ -1,6 +1,6 @@
 # Promptopia
 
-Discover & Share AI Prompts.
+Discover & Share AI Prompts. Promptopia is an open-source AI prompting tool for modern world to discover, create and share creative prompts.
 
 Next.js application that highlights the key features of Next.js along with a comprehensive CRUD AI Prompt sharing system utilizing a MongoDB database and implementing NextAuth authentication.
 
