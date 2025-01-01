@@ -9,29 +9,20 @@ const UserProfile = ({ params }) => {
   const searchParams = useSearchParams();
   const userName = searchParams.get("name");
 
-  const projectId = useParams();
+  const projectId = useParams().id;
 
-  // const [projectId, setProjectId] = useState("");
   const [userPosts, setUserPosts] = useState([]);
-
-  // useEffect(() => {
-  //   const getId = async () => {
-  //     const paramId = await params?.id;
-  //     setProjectId(paramId);
-  //   };
-  //   getId();
-  // }, [params]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${projectId.id}/posts`);
+      const response = await fetch(`/api/users/${projectId}/posts`);
       const data = await response.json();
 
       setUserPosts(data);
     };
 
-    if (projectId.id) fetchPosts();
-  }, [projectId.id]);
+    if (projectId) fetchPosts();
+  }, [projectId]);
 
   return (
     <Profile
