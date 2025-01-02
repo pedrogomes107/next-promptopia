@@ -20,8 +20,6 @@ Next.js application that highlights the key features of Next.js along with a com
 
 #### `npm run build`
 
-#### `npm run preview`
-
 ## Tutorial:
 
 https://www.youtube.com/watch?v=wm5gMKuwSYk
