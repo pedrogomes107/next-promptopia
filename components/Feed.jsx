@@ -46,6 +46,10 @@ const Feed = () => {
     );
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   const handleSearchChange = (e) => {
     clearTimeout(searchTimeout);
     setSearchText(e.target.value);
@@ -68,7 +72,7 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <form className="relative w-full flex-center">
+      <form onSubmit={handleSubmit} className="relative w-full flex-center">
         <input
           type="text"
           placeholder="Search for a tag or a username"
@@ -85,7 +89,9 @@ const Feed = () => {
           handleTagClick={handleTagClick}
         />
       ) : (
-        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+        { fetchPosts } && (
+          <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+        )
       )}
     </section>
   );
