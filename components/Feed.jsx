@@ -28,7 +28,6 @@ const Feed = () => {
   const fetchPosts = async () => {
     const response = await fetch("/api/prompt");
     const data = await response.json();
-
     setAllPosts(data);
   };
 
@@ -89,9 +88,7 @@ const Feed = () => {
           handleTagClick={handleTagClick}
         />
       ) : (
-        { fetchPosts } && (
-          <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
-        )
+        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
       )}
     </section>
   );
