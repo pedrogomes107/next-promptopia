@@ -47,6 +47,7 @@ const Feed = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    fetchPosts();
   };
 
   const handleSearchChange = (e) => {
